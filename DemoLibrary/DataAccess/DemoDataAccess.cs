@@ -11,6 +11,11 @@ public class DemoDataAccess : IDataAccess
         people.Add(new PersonModel { Id = 2, FirstName = "Jane", LastName = "Doe" });
     }
 
+    public void DeletePerson(int id)
+    {
+        people.RemoveAll(x => x.Id == id);
+    }
+
     public List<PersonModel> GetPeople()
     {
         return people;
